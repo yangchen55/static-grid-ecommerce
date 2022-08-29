@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 2rem;
+}
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 80vh;
+  display: grid;
+  gap: 5px;
+  grid-template-areas:
+    "header header header  "
+    "title title title"
+    "banner banner bb1"
+    "banner banner bb2"
+    "side-menu main main"
+    "tags main main"
+    "recently main main"
+    "footer footer footer";
+
+  /* divide by fraction */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+}
+
+.header {
+  background: rgb(163, 128, 128);
+  /* grid-column: 1/4;
+  grid-row: 1/2; */
+  grid-area: header;
+}
+
+.title {
+  background-color: antiquewhite;
+  /* grid-column: 1/3;
+  grid-row: 2/4; */
+  grid-area: title;
+}
+
+.banner {
+  background: radial-gradient(pink, rgb(187, 27, 179));
+  min-height: 50vh;
+  grid-area: banner;
+}
+
+.bb1 {
+  background-color: aquamarine;
+  /* grid-area: 2/3/2/2; */
+  grid-area: bb1;
+}
+
+.bb2 {
+  background-color: bisque;
+  grid-area: bb2;
+}
+
+.side-menu {
+  background: linear-gradient(to right, yellow, black, green);
+  min-height: 20vh;
+  grid-area: side-menu;
+}
+
+.tags {
+  background-color: rgb(182, 116, 35);
+  grid-area: tags;
+}
+.recently {
+  background-color: rgb(80, 172, 44);
+  grid-area: recently;
+}
+.main {
+  background-color: rgb(131, 212, 120);
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.main > div {
+  margin: 2px;
+  background: rgb(236, 218, 218);
+  border: 1px solid #ccc;
+  min-height: 200px;
+  border-radius: 5px;
+  min-width: 200px;
+}
+.footer {
+  background-color: rgb(206, 181, 151);
+  grid-area: footer;
+}
+
+/* ipad and above */
+@media (max-width: 768px) {
+  .wrapper {
+    min-height: 80vh;
+    display: grid;
+    gap: 5px;
+    grid-template-areas:
+      "header header"
+      "title title"
+      "banner banner "
+      "bb1 bb2"
+      "side-menu side-menu"
+      " main main"
+      "recently tags"
+      "footer footer ";
+  }
+}
+/* mobile and smllaer */
+@media (max-width: 500px) {
+  .wrapper {
+    min-height: 80vh;
+    display: grid;
+    gap: 5px;
+    /* grid-template-columns: auto; */
+    grid-template-areas:
+      "header"
+      "title"
+      "banner"
+      "bb1"
+      "bb2"
+      "side-menu"
+      "main"
+      "recently"
+      "tags"
+      "footer";
+  }
+}
